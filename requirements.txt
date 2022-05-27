@@ -1,0 +1,4 @@
+sanic==20.12.6
+httpx
+bs4
+lxml
