@@ -3,7 +3,7 @@ import re
 from bs4 import BeautifulSoup as bs
 
 
-async def bin_scrape(binov):
+async def bin_scrape(binovt):
     url = 'https://binov.net/'
     x = re.sub(r'[^0-9]', '', binovt)
     if len(x) < 6:
