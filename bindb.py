@@ -1,16 +1,18 @@
 import httpx
+import re
 from bs4 import BeautifulSoup as bs
 
 
-async def bin_scrape(binov: int):
+async def bin_scrape(binov):
     url = 'https://binov.net/'
-    if len(binov) < 6:
+    x = re.sub(r'[^0-9]', '', binovt)
+    if len(x) < 6:
         return {"status": False, "error": "INVALID DATA PROVIDED 6 DIGITS REQUIRED"}
     try:
         async with httpx.AsyncClient() as client:
             r = await client.post(url,
                                   data={
-                                      'BIN': binov[:6],
+                                      'BIN': x[:6],
                                       'BANK': 1,
                                       'COUNTRY': 1,
                                   })
@@ -19,7 +21,7 @@ async def bin_scrape(binov: int):
 
             data = {}
             data["status"] = True
-            data["bin"] = binov[:6]
+            data["bin"] = x[:6]
             data["brand"] = k.findAll('td')[7].get_text()
             data["bank"] = k.findAll('td')[8].get_text()
             data["type"] = k.findAll('td')[9].get_text()
