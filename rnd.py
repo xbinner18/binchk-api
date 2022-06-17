@@ -24,9 +24,9 @@ async def rnd_scrape():
             data["age"] = k[4].get_text()
             data["street"] = k[5].get_text()
             data["city"] = add[0]
-            data["state"] = add[1][:-4]
+            data["state"] = add[1][:-4].strip()
             data["st"] = add[1][-4:][1:3]
-            data["zip"] = add[2]
+            data["zip"] = add[2].strip()
             data["phone"] = k[8].get_text()
             data["country"] = 'United States'
             data["code"] = 'US'
