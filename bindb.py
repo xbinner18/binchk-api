@@ -81,7 +81,7 @@ async def bin_scrape(binov: int):
             data["type"] = Type
             data["bank"] = issuer
             data["scheme"] = scheme
-            data["prepaid"] = prepaid
+            # data["prepaid"] = prepaid
             data["country"] = code
             data["flag"] = flag.flag(code)
 
