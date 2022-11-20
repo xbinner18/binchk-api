@@ -45,7 +45,7 @@ def gen(first_6: int, mm: int=None, yy: int=None, cvv: int=None):
 
 
 async def bin_scrape(binov: int):
-    CC = gen(binov)
+    CC = gen(binov[:6])
     CCN, M, Y, CVV = CC.split('|')
     url = f'https://api.worldpay.com/v1/tokens'
     try:
