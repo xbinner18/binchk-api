@@ -3,6 +3,7 @@ import flag
 import asyncio
 import random
 import re
+import pycountry
 
 
 def gen(first_6: int, mm: int=None, yy: int=None, cvv: int=None):
@@ -74,6 +75,7 @@ async def bin_scrape(binov: int):
             issuer = re.search(r'"cardIssuer":"([^"]+)', r.text)[1]
             prepaid = re.search(r'"prepaid":([^}]+)', r.text)[1]
             scheme = re.search(r'"cardProductTypeDescNonContactless":"([^"]+)', r.text)[1]
+            country = pycountry.countries.get(alpha_2=code)
             
             data = {}
             data["status"] = True
@@ -81,8 +83,8 @@ async def bin_scrape(binov: int):
             data["type"] = Type
             data["bank"] = issuer
             data["scheme"] = scheme
-            # data["prepaid"] = prepaid
-            data["country"] = code
+            data["country"] = country.name
+            data["code"] = code
             data["flag"] = flag.flag(code)
 
             return data
