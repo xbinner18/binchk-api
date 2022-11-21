@@ -8,7 +8,7 @@
 https://binchk-api.vercel.app/bin={6digitbin}
 response example below
 success
-`{"status":true,"bin":"510805","brand":"MASTERCARD","type":"DEBIT","level":"STANDARD","bank":"CAPITAL ONE BANK (USA), N.A.","url":"------","phone":"800-955-7070","country":"UNITED STATES","code":"US","flag":"\ud83c\uddfa\ud83c\uddf8","currency":"USD"}`
+`{'status': True, 'bin': '403833', 'type': 'VISA_CORPORATE_DEBIT', 'bank': 'GREEN DOT BANK DBA BONNEVILLE BANK', 'scheme': 'Visa Debit Com', 'country': 'United States', 'code': 'US', 'flag': '🇺🇸'}`
 
 failure
 `{"status":false,"e":"error reason"}`
