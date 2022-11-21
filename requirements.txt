@@ -2,3 +2,4 @@ sanic==20.12.6
 httpx
 bs4
 emoji-country-flag
+pycountry
