@@ -14,11 +14,7 @@ async def rnd_scrape():
             l = m.split()[2]
             add = k[6].get_text().split(',')
 
-            data = {}
-            data["status"] = True
-            data["first"] = f
-            data["last"] = l
-            data["gender"] = k[1].get_text()
+            data = {"status": True, "first": f, "last": l, "gender": k[1].get_text()}
             data["race"] = k[2].get_text()
             data["dob"] = k[3].get_text()
             data["age"] = k[4].get_text()
