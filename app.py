@@ -7,7 +7,7 @@ from rnd import rnd_scrape
 app = Sanic('binchk-app')
 
 
-INDEX = f'''
+INDEX = '''
     <html>
         <body>
             <h1>BIN CHK API!</h1>

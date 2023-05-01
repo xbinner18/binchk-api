@@ -12,9 +12,9 @@ async def ua_scrape():
             soup = bs(r, features='html.parser')
             k = soup.findAll('strong')
             m = random.choice(k)
-            data = {}
-            data["status"] = True
-            data["ua"] = f'Mozilla/5.0 (Android {random.randint(10,12)}; Mobile; {m.get_text()}; rv:107.0) Gecko/101.0 Firefox/107.0'.strip()
-            return data
+            return {
+                "status": True,
+                "ua": f'Mozilla/5.0 (Android {random.randint(10,12)}; Mobile; {m.get_text()}; rv:107.0) Gecko/101.0 Firefox/107.0'.strip(),
+            }
     except Exception as e:
         return {"status": False, "error": e}
