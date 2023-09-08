@@ -14,7 +14,7 @@ async def ua_scrape():
             m = random.choice(k)
             return {
                 "status": True,
-                "ua": f'Mozilla/5.0 (Android {random.randint(10,12)}; Mobile; {m.get_text()}; rv:107.0) Gecko/101.0 Firefox/107.0'.strip(),
+                "ua": f'Mozilla/5.0 (Android {random.randint(10,12)}; Mobile; {m.get_text()}; rv:109.0) Gecko/117.0 Firefox/109.0'.strip(),
             }
     except Exception as e:
         return {"status": False, "error": e}
