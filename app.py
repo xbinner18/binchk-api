@@ -2,7 +2,6 @@ from sanic import Sanic
 from sanic.response import json, html
 from bindb import bin_scrape
 from ua import ua_scrape
-from rnd import rnd_scrape
 
 app = Sanic('binchk-app')
 
@@ -32,11 +31,6 @@ async def binn(request, query):
 @app.route('/ua')
 async def rndua(request):
     return json(await ua_scrape())
-
-
-@app.route('/rnd')
-async def rndadd(request):
-    return json(await rnd_scrape())
 
 
 if __name__ == "__main__":
